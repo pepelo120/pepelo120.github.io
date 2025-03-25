@@ -1,0 +1,63 @@
+/* Estilos para el apartado de domicilio */
+body {
+    background-color: #0b3d91; /* Fondo azul oscuro (como el espacio) */
+    font-family: 'Orbitron', sans-serif; /* Fuente moderna y geométrica */
+    color: #ffffff; /* Texto blanco */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #ff0000; /* Rojo brillante */
+    text-align: center;
+    font-size: 48px;
+    text-shadow: 3px 3px #000000; /* Sombra negra */
+    margin-top: 20px;
+    letter-spacing: 3px; /* Espaciado entre letras */
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1f1f1f; /* Fondo gris oscuro */
+    border: 4px solid #ff0000; /* Borde rojo brillante */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 0px 15px #ff0000; /* Sombra roja */
+}
+
+label {
+    color: #00ff00; /* Verde brillante */
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 18px; /* Tamaño de fuente más grande */
+}
+
+input[type="text"], input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    background-color: #1f1f1f; /* Fondo gris oscuro */
+    color: #ffffff; /* Texto blanco */
+    border: 2px solid #ff0000; /* Borde rojo */
+    font-family: 'Orbitron', sans-serif; /* Fuente moderna y geométrica */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+}
+
+button {
+    background-color: #ff0000; /* Rojo brillante */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Orbitron', sans-serif; /* Fuente moderna y geométrica */
+}
+
+button:hover {
+    background-color: #cc0000; /* Rojo más oscuro al pasar el mouse */
+}

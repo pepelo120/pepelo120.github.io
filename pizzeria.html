@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pizzeria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="pizzeria.css">
+</head>
+<body>
+    <h1>Pizzeria "Fabrizzio"</h1>
+    <form id="formulario">
+        <!-- Selección de Pizzas -->
+        <label for="pizza1">Pizza 1:</label>
+        <select id="pizza1" name="pizza1">
+            <option value="Nada">Nada ($0)</option>
+            <option value="Mexicana">Mexicana ($100)</option>
+            <option value="Pepperoni">Pepperoni ($120)</option>
+            <option value="Hawaiana">Hawaiana ($110)</option>
+        </select>
+        <br><br>
+        <label for="pizza2">Pizza 2:</label>
+        <select id="pizza2" name="pizza2">
+            <option value="Nada">Nada ($0)</option>
+            <option value="Mexicana">Mexicana ($100)</option>
+            <option value="Pepperoni">Pepperoni ($120)</option>
+            <option value="Hawaiana">Hawaiana ($110)</option>
+        </select>
+        <br><br>
+        <label for="pizza3">Pizza 3:</label>
+        <select id="pizza3" name="pizza3">
+            <option value="Nada">Nada ($0)</option>
+            <option value="Mexicana">Mexicana ($100)</option>
+            <option value="Pepperoni">Pepperoni ($120)</option>
+            <option value="Hawaiana">Hawaiana ($110)</option>
+        </select>
+        <br><br>
+
+        <!-- Complementos -->
+        <h2>Complementos</h2>
+        <label for="refresco">Refresco ($30):</label>
+        <input type="checkbox" id="refresco" name="refresco" value="30">
+        <br>
+        <label for="papas">Papas ($45):</label>
+        <input type="checkbox" id="papas" name="papas" value="45">
+        <br>
+        <label for="postre">Postre ($55):</label>
+        <input type="checkbox" id="postre" name="postre" value="55">
+        <br>
+        <label for="ensalada">Ensalada ($35):</label>
+        <input type="checkbox" id="ensalada" name="ensalada" value="35">
+        <br><br>
+
+        <!-- Método de Pago -->
+        <h2>Método de Pago</h2>
+        <label for="metodo-pago">Método de Pago:</label>
+        <select id="metodo-pago" name="metodo-pago" required>
+            <option value="">Seleccione...</option>
+            <option value="Efectivo">Efectivo</option>
+            <option value="Tarjeta">Tarjeta</option>
+        </select>
+        <br><br>
+
+        <!-- Campos para Pago con Tarjeta -->
+        <div id="pago-tarjeta" style="display: none;">
+            <label for="num-tarjeta">Número de Tarjeta:</label>
+            <input type="text" id="num-tarjeta" name="num-tarjeta" maxlength="16" pattern="\d{16}">
+            <br><br>
+            <label for="fecha-exp">Fecha de Expiración (MM/AA):</label>
+            <input type="text" id="fecha-exp" name="fecha-exp" maxlength="5" pattern="\d{2}/\d{2}">
+            <br><br>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" maxlength="3" pattern="\d{3}">
+            <br><br>
+        </div>
+
+        <!-- Botones -->
+        <button id="local">Pedido Local</button>
+        <button id="domicilio">Pedido a Domicilio</button>
+    </form>
+
+    <script src="pizzeria.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* Estilos generales */
+body {
+    background-color: #0b3d91; /* Fondo azul oscuro (como el espacio) */
+    font-family: 'Orbitron', sans-serif; /* Fuente moderna y geométrica */
+    color: #ffffff; /* Texto blanco */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #ff0000; /* Rojo brillante */
+    text-align: center;
+    font-size: 48px;
+    text-shadow: 3px 3px #000000; /* Sombra negra */
+    margin-top: 20px;
+    letter-spacing: 3px; /* Espaciado entre letras */
+}
+
+/* Contenedor del ticket */
+.ticket-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1f1f1f; /* Fondo gris oscuro */
+    border: 4px solid #ff0000; /* Borde rojo brillante */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 0px 15px #ff0000; /* Sombra roja */
+}
+
+/* Contenedor flexible para la imagen y los detalles */
+.contenido-ticket {
+    display: flex; /* Usamos Flexbox para alinear la imagen y el contenido */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+}
+
+/* Estilos para la imagen */
+.imagen-among {
+    flex: 0 0 200px; /* Ancho fijo de 200px para la imagen */
+    margin-right: 20px; /* Espacio entre la imagen y los detalles */
+}
+
+.imagen-among img {
+    max-width: 100%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    border: 4px solid #ff0000; /* Borde rojo */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 0px 15px #ff0000; /* Sombra roja */
+}
+
+/* Estilos para los detalles del pedido */
+.detalles-pedido {
+    flex: 1; /* Ocupa el espacio restante */
+}
+
+.detalles-pedido h2 {
+    color: #ff0000; /* Rojo brillante */
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.detalles-pedido p {
+    margin: 8px 0;
+    font-size: 18px; /* Tamaño de fuente más grande */
+    color: #ffffff; /* Texto blanco */
+}
+
+.detalles-pedido strong {
+    color: #00ff00; /* Verde brillante */
+}
+
+.detalles-pedido span {
+    color: #ffffff; /* Texto blanco */
+}
+
+/* Total a pagar */
+.total {
+    color: #ff0000; /* Rojo brillante */
+    font-size: 24px; /* Tamaño de fuente más grande */
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: 2px 2px #000000; /* Sombra negra */
+}
