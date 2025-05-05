@@ -3,7 +3,7 @@ const ahora = new Date();
 const horas = ahora.getHours();
 
 // Verificar si la hora está entre las 9:00 AM y las 9:00 PM
-if (horas < 9 || horas >= 21) {
+if (horas < 0 || horas >= 24) {
     document.body.innerHTML = '<h1>Gracias por su preferencia, lo esperamos en horario laboral (9:00 AM - 9:00 PM).</h1>';
     document.body.style.color = 'red'; // Cambiar el color del mensaje a rojo
     document.body.style.textAlign = 'center'; // Centrar el mensaje

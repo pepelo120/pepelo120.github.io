@@ -1,0 +1,93 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #1b1b1b;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Encabezado */
+header {
+    background-color: #ff4500;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor de cenas centrado */
+#contenedor-cenas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+/* Estilos de cada cena */
+.cena {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.5);
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    cursor: pointer; /* Hace que parezca un botón */
+}
+
+/* Imágenes de cenas con tamaño uniforme */
+.cena img {
+    width: 100%;
+    height: 200px; /* Fijar altura uniforme */
+    object-fit: cover; /* Ajusta la imagen dentro del cuadro */
+    border-radius: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 8px rgba(255, 69, 0, 0.4);
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar animación correctamente */
+.cena.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Efecto de interacción */
+.cena:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
+    box-shadow: 0px 8px 18px rgba(255, 69, 0, 0.7);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header {
+        width: 80%;
+    }
+    #contenedor-cenas {
+        flex-direction: column;
+        align-items: center;
+    }
+}

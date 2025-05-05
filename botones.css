@@ -1,0 +1,25 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #1b1b1b;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajusta la pantalla completa */
+}
+
+/* Contenedor de los botones */
+#contenedor-botones {
+    display: flex;
+    flex-direction: column; /* Los botones estarán alineados en columna */
+    gap: 20px;
+    padding: 40px;
+    background-color: #333; /* Fondo similar al de las recetas */
+    border-radius: 30px;
+    box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.5);
+}
