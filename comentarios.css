@@ -1,0 +1,110 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor del formulario con efecto de profundidad */
+.contenedor {
+    background: linear-gradient(135deg, #ff4500, #ff7f50);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(255, 69, 0, 0.5);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estilos de los elementos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* Estilo modernizado de los campos de texto */
+.controls {
+    width: 90%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al seleccionar un campo */
+.controls:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    outline: none;
+}
+
+/* Ajuste del textarea con bordes suaves */
+textarea {
+    height: 120px;
+    resize: none;
+    width: 90%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    outline: none;
+}
+
+/* Botón de enviar con efecto elegante */
+.botons {
+    background: linear-gradient(135deg, #1b1b1b, #333);
+    color: white;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efectos al pasar el cursor */
+.botons:hover {
+    background: linear-gradient(135deg, #cc3700, #ff4500);
+    transform: scale(1.05);
+    box-shadow: 0px 8px 25px rgba(255, 69, 0, 0.7);
+}
+
+.botons:active {
+    transform: scale(0.95);
+    box-shadow: 0px 3px 10px rgba(255, 69, 0, 0.5);
+}

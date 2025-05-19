@@ -7,19 +7,323 @@
     <link rel="stylesheet" href="recetas.css">
 </head>
 <body>
-    <header>
-        <h1>Recetas Deliciosas 🍽️</h1>
-        <p>Explora nuestras recetas fáciles y sabrosas para cocinar como un experto.</p>
-    </header>
 
-    <!-- Botones de categorías -->
-    <div id="botones-categorias">
-        <button onclick="window.location.href='desayunos.html'">Desayunos 🍳</button>
-        <button onclick="window.location.href='comidas.html'">Comidas 🍗</button>
-        <button onclick="window.location.href='cenas.html'">Cenas 🍽️</button>
-        <button onclick="window.location.href='postres.html'">Postres 🍰</button>
+    <!-- Botón de menú hamburguesa -->
+    <button class="menu-toggle" onclick="abrirMenu()">☰</button>
+
+    <!-- Menú lateral deslizable -->
+    <div class="menu-lateral" id="menu">
+        <button class="cerrar-menu" onclick="cerrarMenu()">✖</button>
+        <button class="boton-menu" onclick="window.location.href='index.html'">🏠 Inicio</button>
+        <button class="boton-menu" onclick="window.location.href='comentarios.html'">💬 Comentarios</button>
+        <input type="text" class="buscador" id="buscador" placeholder="🔍 Escribe tu receta y presiona Enter">
+    </div>
+
+    <!-- Contenido de la página -->
+    <div class="contenido">
+        <header>
+            <h1 class="titulo">Recetas Deliciosas 🍽️</h1>
+            <p class="subtitulo">Disfruta explorando nuestras recetas 😋</p>
+        </header>
+
+        <!-- Botones de categorías con diseño mejorado -->
+        <div id="botones-categorias">
+            <button class="boton-estilo" onclick="window.location.href='desayunos.html'">Desayunos 🍳</button>
+            <button class="boton-estilo" onclick="window.location.href='comidas.html'">Comidas 🍗</button>
+            <button class="boton-estilo" onclick="window.location.href='cenas.html'">Cenas 🍽️</button>
+            <button class="boton-estilo" onclick="window.location.href='postres.html'">Postres 🍰</button>
+        </div>
     </div>
 
     <script src="recetas.js"></script>
+    <script>
+        function abrirMenu() {
+            let menu = document.getElementById("menu");
+            menu.style.left = "0";
+            menu.style.boxShadow = "4px 0px 15px rgba(0, 0, 0, 0.5)";
+            menu.style.visibility = "visible";
+        }
+
+        function cerrarMenu() {
+            let menu = document.getElementById("menu");
+            menu.style.left = "-300px";
+            menu.style.boxShadow = "none";
+            setTimeout(() => {
+                menu.style.visibility = "hidden";
+            }, 300);
+        }
+
+        document.addEventListener("click", function(event) {
+            let menu = document.getElementById("menu");
+            let botonMenu = document.querySelector(".menu-toggle");
+
+            if (!menu.contains(event.target) && event.target !== botonMenu) {
+                cerrarMenu();
+            }
+        });
+
+        // Buscador funcional
+        document.getElementById("buscador").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                let receta = event.target.value.toLowerCase().trim();
+                let paginasRecetas = {
+                    "desayunos": "desayunos.html",
+                    "desayuno": "desayunos.html",
+    "Desayuno": "desayunos.html",
+    "DESAYUNO": "desayunos.html",
+    "desayuno.": "desayunos.html",
+    "Desayuno.": "desayunos.html",
+    "DeSayuno": "desayunos.html",
+    "deSayuno": "desayunos.html",
+    "desayno": "desayunos.html",
+    "desaynuo": "desayunos.html",
+    "desayuo": "desayunos.html",
+    "desaynoo": "desayunos.html",
+    "de sayuno": "desayunos.html",
+    "de sayno": "desayunos.html",
+    "desyuno": "desayunos.html",
+    "desayuuno": "desayunos.html",
+    "DesayuNo": "desayunos.html",
+    "DesayuNO": "desayunos.html",
+    "dESAYUNO": "desayunos.html",
+    "D e s a y u n o": "desayunos.html",
+    "de say uno": "desayunos.html",
+    "Desaayuno": "desayunos.html",
+    "Desayno": "desayunos.html",
+    "dezauno": "desayunos.html",
+    "dezaayuno": "desayunos.html",
+    "desauno": "desayunos.html",
+    "DESAUNO": "desayunos.html",
+    "DESSAYUNO": "desayunos.html",
+    "Dessayuno": "desayunos.html",
+    "dessayno": "desayunos.html",
+    "DESAYNNO": "desayunos.html",
+    "desayuno!": "desayunos.html",
+    "desayuno?": "desayunos.html",
+    "Desayuno¡": "desayunos.html",
+    "Desayuno¿": "desayunos.html",
+    "desayunno": "desayunos.html",
+    "desayunnoo": "desayunos.html",
+    "dessayunno": "desayunos.html",
+    "desaiuno": "desayunos.html",
+    "desayunnooo": "desayunos.html",
+    "desayunooo": "desayunos.html",
+    "dezzayuno": "desayunos.html",
+    "dezayuno": "desayunos.html",
+    "DESAYUNOO": "desayunos.html",
+    "DESAYUNOOO": "desayunos.html",
+    "DESAYNUO": "desayunos.html",
+    "de.sayuno": "desayunos.html",
+    "d e s a y u n o": "desayunos.html",
+    "d-e-s-a-y-u-n-o": "desayunos.html",
+                    "comidas": "comidas.html",
+                        "comidas": "comidas.html",
+    "Comidas": "comidas.html",
+    "COMIDAS": "comidas.html",
+    "comida": "comidas.html",
+    "Comida": "comidas.html",
+    "COMIDA": "comidas.html",
+    "comida.": "comidas.html",
+    "Comida.": "comidas.html",
+    "comiida": "comidas.html",
+    "comidda": "comidas.html",
+    "comidass": "comidas.html",
+    "Comiddas": "comidas.html",
+    "CoMidaS": "comidas.html",
+    "coMIda": "comidas.html",
+    "comdia": "comidas.html",
+    "comidá": "comidas.html",
+    "comdias": "comidas.html",
+    "ccomida": "comidas.html",
+    "co m i d a s": "comidas.html",
+    "co-mi-da": "comidas.html",
+    "comdias.": "comidas.html",
+    "ComDia": "comidas.html",
+    "comidaa": "comidas.html",
+    "comidda.": "comidas.html",
+    "comidass!": "comidas.html",
+    "comida?": "comidas.html",
+    "comidas¿": "comidas.html",
+    "comidas¡": "comidas.html",
+    "comiidass": "comidas.html",
+    "commidas": "comidas.html",
+    "comidaas": "comidas.html",
+    "coomida": "comidas.html",
+    "coomidda": "comidas.html",
+    "coomidas": "comidas.html",
+    "c0midas": "comidas.html",
+    "comida123": "comidas.html",
+    "comidaaa": "comidas.html",
+    "commida": "comidas.html",
+    "cmida": "comidas.html",
+    "comiidaas": "comidas.html",
+    "c0midass": "comidas.html",
+    "comiidas": "comidas.html",
+    "commidaas": "comidas.html",
+    "comida!!": "comidas.html",
+    "COMIDASS": "comidas.html",
+    "cómidas": "comidas.html",
+    "comída": "comidas.html",
+    "COMIDA.S": "comidas.html",
+    "c o m i d a s": "comidas.html",
+                    "cenas": "cenas.html",
+                    "cenas": "cenas.html",
+    "Cenas": "cenas.html",
+    "CENAS": "cenas.html",
+    "cena": "cenas.html",
+    "Cena": "cenas.html",
+    "CENA": "cenas.html",
+    "cena.": "cenas.html",
+    "Cena.": "cenas.html",
+    "cennas": "cenas.html",
+    "cenaas": "cenas.html",
+    "cenass": "cenas.html",
+    "Cenass": "cenas.html",
+    "CeNas": "cenas.html",
+    "cEna": "cenas.html",
+    "cenna": "cenas.html",
+    "cená": "cenas.html",
+    "cenasss": "cenas.html",
+    "ccena": "cenas.html",
+    "c e n a s": "cenas.html",
+    "c-e-n-a": "cenas.html",
+    "cennas.": "cenas.html",
+    "CenNa": "cenas.html",
+    "cenaa": "cenas.html",
+    "cennas.": "cenas.html",
+    "cenass!": "cenas.html",
+    "cena?": "cenas.html",
+    "cenas¿": "cenas.html",
+    "cenas¡": "cenas.html",
+    "cennaas": "cenas.html",
+    "commida": "cenas.html",
+    "cenaas": "cenas.html",
+    "coena": "cenas.html",
+    "coenna": "cenas.html",
+    "coennas": "cenas.html",
+    "c0enas": "cenas.html",
+    "cena123": "cenas.html",
+    "cenaaa": "cenas.html",
+    "cennaa": "cenas.html",
+    "cna": "cenas.html",
+    "cennaas": "cenas.html",
+    "c0enass": "cenas.html",
+    "cennias": "cenas.html",
+    "cennnaas": "cenas.html",
+    "cena!!": "cenas.html",
+    "CENASS": "cenas.html",
+    "cénas": "cenas.html",
+    "cená": "cenas.html",
+    "CENA.S": "cenas.html",
+    "c e n a s": "cenas.html",
+                    "postres": "postres.html",
+                     "postres": "postres.html",
+    "Postres": "postres.html",
+    "POSTRES": "postres.html",
+    "postre": "postres.html",
+    "Postre": "postres.html",
+    "POSTRE": "postres.html",
+    "postre.": "postres.html",
+    "Postre.": "postres.html",
+    "postress": "postres.html",
+    "postrees": "postres.html",
+    "posstres": "postres.html",
+    "Postrees": "postres.html",
+    "PosTres": "postres.html",
+    "poStre": "postres.html",
+    "postreé": "postres.html",
+    "postreees": "postres.html",
+    "ppostre": "postres.html",
+    "p o s t r e s": "postres.html",
+    "p-o-s-t-r-e": "postres.html",
+    "posstres.": "postres.html",
+    "PostTre": "postres.html",
+    "postree": "postres.html",
+    "postres.": "postres.html",
+    "postresss!": "postres.html",
+    "postre?": "postres.html",
+    "postres¿": "postres.html",
+    "postres¡": "postres.html",
+    "postreees": "postres.html",
+    "p0stres": "postres.html",
+    "postres123": "postres.html",
+    "postreeee": "postres.html",
+    "postrrre": "postres.html",
+    "pstrs": "postres.html",
+    "postrees.": "postres.html",
+    "p0strres": "postres.html",
+    "postreeees": "postres.html",
+    "postrresss": "postres.html",
+    "postre!!": "postres.html",
+    "POSTRESS": "postres.html",
+    "póstre": "postres.html",
+    "postrrres": "postres.html",
+    "POSTRE.S": "postres.html",
+    "p o s t r e s": "postres.html",
+    "POSTREESS": "postres.html",
+    "Postré": "postres.html",
+    "PoStrres": "postres.html",
+    "postressss": "postres.html",
+    "poshtres": "postres.html",
+            "helado artesanal":"postre-7-helado-artesanal.html",
+            "helado": "postre-7-helado-artesanal.html",
+            "nieves": "postre-7-helado-artesanal.html",
+            "macarons": "postre-6-macarons.html",
+            "macarrones": "postre-6-macarons.html",
+            "galletas francesas": "postre-6-macarons.html",
+            "donas": "postre-5-donas.html",
+            "rosquillas": "postre-5-donas.html",
+            "cheesecake": "postre-4-cheesecake.html",
+            "tarta de queso": "postre-4-cheesecake.html",
+            "pastel de queso": "postre-4-cheesecake.html",
+            "flan caramelo": "postre-3-flan-caramelo.html",
+            "flan": "postre-3-flan-caramelo.html",
+            "tiramisu": "postre-2-tiramisu.html",
+            "postre italiano": "postre-2-tiramisu.html",
+            "pastel de chocolate": "postre-1-pastel-chocolate.html",
+            "chocolate cake": "postre-1-pastel-chocolate.html",
+            "omelette de espinacas": "desayuno-7-omelette-espinacas.html",
+            "omelette": "desayuno-7-omelette-espinacas.html",
+            "huevo con espinacas": "desayuno-7-omelette-espinacas.html",
+            "batido de plátano": "desayuno-6-batido-platano.html",
+            "licuado de plátano": "desayuno-6-batido-platano.html",
+            "smoothie de plátano": "desayuno-6-batido-platano.html",
+            "hotcakes": "desayuno-5-hotcakes.html",
+            "pancakes": "desayuno-5-hotcakes.html",
+            "tostadas de aguacate": "desayuno-4-tostadas-aguacate.html",
+            "tostadas saludables": "desayuno-4-tostadas-aguacate.html",
+            "chilaquiles verdes": "desayuno-3-chilaquiles-verdes.html",
+            "chilaquiles": "desayuno-3-chilaquiles-verdes.html",
+            "avena con frutas": "desayuno-2-avena-frutas.html",
+            "avena": "desayuno-2-avena-frutas.html",
+            "huevos rancheros": "desayuno-1-huevos-rancheros.html",
+            "tacos al pastor": "comida-7-tacos-pastor.html",
+            "tacos": "comida-7-tacos-pastor.html",
+            "ensalada césar": "comida-6-ensalada-cesar.html",
+            "ensalada saludable": "comida-6-ensalada-cesar.html",
+            "sopa de lentejas": "comida-5-sopa-lentejas.html",
+            "pasta carbonara": "comida-4-pasta-carbonara.html",
+            "carne asada": "comida-3-carne-asada.html",
+            "pescado a la veracruzana": "comida-2-pescado-veracruzana.html",
+            "arroz con pollo": "comida-1-arroz-pollo.html",
+            "salmón con miel": "cena-7-salmon-miel.html",
+            "pizza de vegetales": "cena-6-pizza-vegetales.html",
+            "pizza saludable": "cena-6-pizza-vegetales.html",
+            "enchiladas": "cena-5-enchiladas.html",
+            "sopa de tomate": "cena-4-sopa-tomate.html",
+            "hamburguesas": "cena-3-hamburguesas.html",
+            "tacos de pescado": "cena-2-tacos-pescado.html",
+            "pasta alfredo": "cena-1-pasta-alfredo.html"
+                };
+                
+                if (paginasRecetas[receta]) {
+                    window.location.href = paginasRecetas[receta];
+                } else {
+                    alert("Receta no encontrada. Intenta con: desayunos, comidas, cenas o postres.");
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>

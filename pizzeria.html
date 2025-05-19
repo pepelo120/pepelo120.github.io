@@ -6,6 +6,16 @@
     <link rel="stylesheet" type="text/css" href="pizzeria.css">
 </head>
 <body>
+    
+     <!-- Botón de menú hamburguesa -->
+    <button class="menu-toggle" onclick="abrirMenu()">☰</button>
+
+    <!-- Menú lateral deslizable -->
+    <div class="menu-lateral" id="menu">
+        <button class="cerrar-menu" onclick="cerrarMenu()">✖</button>
+        <button class="boton-menu" onclick="window.location.href='index.html'">🏠 Inicio</button>
+        <button class="boton-menu" onclick="window.location.href='comentarios.html'">💬 Comentarios</button>
+    </div>
     <h1>Pizzeria "Fabrizzio"</h1>
     <form id="formulario">
         <!-- Selección de Pizzas -->
