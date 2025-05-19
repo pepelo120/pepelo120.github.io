@@ -10,63 +10,190 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ocupa toda la pantalla */
 }
 
-/* Encabezado */
-header {
+/* Estilo mejorado para los títulos */
+.titulo {
+    font-size: 2.5em;
+    font-weight: bold;
+    background-color: #ff4500;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.subtitulo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff4500;
+    margin-bottom: 30px;
+}
+
+/* Botón de menú hamburguesa */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #ff4500;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Menú lateral */
+.menu-lateral {
+    width: 300px;
+    height: 100vh;
     background-color: #ff4500;
     padding: 20px;
-    width: 90%;
-    max-width: 600px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: -300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: none;
+    transition: left 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    z-index: 999;
+    visibility: hidden;
 }
 
-/* Contenedor de botones centrado */
+/* Botón de cierre más pequeño */
+.cerrar-menu {
+    background: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 5px;
+}
+
+/* Buscador cuadrado */
+.buscador {
+    padding: 8px;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Botones de categorías organizados */
 #botones-categorias {
     display: flex;
-    flex-direction: column; /* Acomoda botones en columna */
+    flex-direction: column;
     align-items: center;
     gap: 15px;
     margin-top: 20px;
 }
 
-/* Botón con animación */
-#botones-categorias button {
+/* Diseño mejorado para los botones */
+.boton-estilo {
     font-size: 20px;
     padding: 15px 30px;
-    border: 3px solid white;
+    border: 3px solid rgb(0, 0, 0);
     border-radius: 50px;
     cursor: pointer;
-    background-color: #ff4500; /* Naranja atractivo */
+    background-color: #ff4500;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 260px;
+}
+
+.boton-estilo:hover {
+    background-color: #cc3700;
+    transform: scale(1.1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.boton-estilo:active {
+    transform: scale(0.95);
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.3);
+}
+/* Estilo mejorado para los botones del menú */
+.boton-menu {
+    font-size: 20px;
+    padding: 12px 25px;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #ff4500;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.boton-menu:hover {
+    background-color: #cc3700;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.boton-menu:active {
+    transform: scale(0.95);
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.3);
+}
+/* Estilo para los botones del menú */
+.boton-menu {
+    font-size: 20px;
+    padding: 12px 25px;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #ff4500;
     color: white;
     font-weight: bold;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease, transform 0.2s ease;
-    width: 250px;
-    opacity: 0;
-    transform: translateY(15px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
-/* Efectos de los botones */
-#botones-categorias button:hover {
+.boton-menu:hover {
     background-color: #cc3700;
     transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
 }
 
-#botones-categorias button:active {
-    transform: scale(0.9);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+/* Buscador funcional */
+.buscador {
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+/* Menú lateral */
+.menu-lateral {
+    z-index: 1001; /* Asegura que el menú esté sobre el botón */
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-    header {
-        width: 80%;
-    }
-    #botones-categorias button {
-        width: 80%;
-    }
+/* Botón de menú hamburguesa */
+.menu-toggle {
+    z-index: 1000; /* Se mantiene detrás cuando el menú está abierto */
 }
