@@ -12,7 +12,7 @@
     <div class="contenedor">
         <h2>💬 Tu Opinión Nos Importa</h2>
         <p>Déjanos tu comentario. Completa el formulario:</p>
-<button class="btn-regresar" onclick="window.history.back()">⬅ Regresar</button>
+        <button class="btn-regresar" onclick="window.history.back()">⬅ Regresar</button>
 
         <form class="form-register" action="https://formspree.io/f/xpwdnzow" method="POST">
             <div class="campo">
@@ -32,7 +32,7 @@
 
             <div class="campo">
                 <label for="mensaje">Comentario:</label>
-                <textarea name="message" id="mensaje" placeholder="Escribe tu comentario aquí..." required></textarea>
+                <textarea name="message" id="mensaje" placeholder="Escribe tu comentario aquí..." required rows="4"></textarea> <!-- ✅ Se eliminó la opción de alargar -->
             </div>
 
             <input class="botons" type="submit" value="Enviar Comentario">
