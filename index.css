@@ -48,3 +48,19 @@ body {
     transform: scale(0.95);
     box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.3);
 }
+/* ✅ Estilo del botón de inicio */
+.boton-inicio {
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background: rgba(255, 69, 0, 0.85); /* 🔥 Color llamativo */
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* ✅ Efecto al pasar el mouse */
+.boton-inicio:hover {
+    background: rgba(255, 69, 0, 1);
+    transform: scale(1.05);
+}
