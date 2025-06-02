@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario de Comentarios 📝</title>
+    <link rel="stylesheet" href="comentarios2.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>💬 Tu Opinión Nos Importa</h2>
+        <p>Déjanos tu comentario. Completa el formulario:</p>
+<button class="btn-regresar" onclick="window.history.back()">⬅ Regresar</button>
+
+        <form class="form-register" action="https://formspree.io/f/xpwdnzow" method="POST">
+            <div class="campo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre" required>
+            </div>
+
+            <div class="campo">
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" id="apellido" placeholder="Ingrese su Apellido" required>
+            </div>
+
+            <div class="campo">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" name="email" id="email" placeholder="Ingrese su Correo" required>
+            </div>
+
+            <div class="campo">
+                <label for="mensaje">Comentario:</label>
+                <textarea name="message" id="mensaje" placeholder="Escribe tu comentario aquí..." required></textarea>
+            </div>
+
+            <input class="botons" type="submit" value="Enviar Comentario">
+        </form>
+    </div>
+
+</body>
+</html>

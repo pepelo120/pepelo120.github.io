@@ -1,0 +1,99 @@
+/* Fondo oscuro con luces de neón */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor con bordes rojos y efecto neón */
+.contenedor {
+    width: 400px;
+    padding: 30px;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #ff0000;
+    text-align: center;
+    border: 3px solid #ff0000;
+}
+
+/* Estilo de los títulos */
+h2 {
+    color: #ffcc00; /* Amarillo Fazbear */
+    font-size: 24px;
+}
+
+/* Efecto glitch en el texto */
+p {
+    color: #ccc;
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* Estilos generales para los campos */
+.campo {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #ffcc00;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #222;
+    color: white;
+}
+
+/* Botón con efecto de luces */
+.botons {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff0000;
+    color: yellow;
+    font-size: 18px;
+    font-weight: bold;
+    border: 3px solid #ffcc00;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: 2px 2px black;
+    transition: 0.3s;
+}
+
+.botons:hover {
+    background-color: yellow;
+    color: #ff0000;
+    box-shadow: 0px 0px 20px #ffcc00;
+}
+.btn-regresar {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #ff0000;
+    color: yellow;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 3px solid #ffcc00;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: 2px 2px black;
+    transition: 0.3s;
+}
+
+.btn-regresar:hover {
+    background-color: yellow;
+    color: #ff0000;
+    box-shadow: 0px 0px 20px #ffcc00;
+}
