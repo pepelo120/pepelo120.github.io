@@ -1,11 +1,10 @@
-document.getElementById("buscador").addEventListener("keypress", function(event) {
+// Buscador funcional
+document.getElementById("buscador").addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         let receta = event.target.value.toLowerCase().trim();
-        
-        // Diccionario de recetas con nombres alternativos
         let paginasRecetas = {
-                                                                                  "desayunos": "desayunos.html",
-                    "desayuno": "desayunos.html",
+    "desayunos": "desayunos.html",
+    "desayuno": "desayunos.html",
     "Desayuno": "desayunos.html",
     "DESAYUNO": "desayunos.html",
     "desayuno.": "desayunos.html",
@@ -53,8 +52,8 @@ document.getElementById("buscador").addEventListener("keypress", function(event)
     "de.sayuno": "desayunos.html",
     "d e s a y u n o": "desayunos.html",
     "d-e-s-a-y-u-n-o": "desayunos.html",
-                    "comidas": "comidas.html",
-                        "comidas": "comidas.html",
+    "comidas": "comidas.html",
+    "comidas": "comidas.html",
     "Comidas": "comidas.html",
     "COMIDAS": "comidas.html",
     "comida": "comidas.html",
@@ -103,8 +102,8 @@ document.getElementById("buscador").addEventListener("keypress", function(event)
     "comída": "comidas.html",
     "COMIDA.S": "comidas.html",
     "c o m i d a s": "comidas.html",
-                    "cenas": "cenas.html",
-                    "cenas": "cenas.html",
+    "cenas": "cenas.html",
+    "cenas": "cenas.html",
     "Cenas": "cenas.html",
     "CENAS": "cenas.html",
     "cena": "cenas.html",
@@ -153,8 +152,8 @@ document.getElementById("buscador").addEventListener("keypress", function(event)
     "cená": "cenas.html",
     "CENA.S": "cenas.html",
     "c e n a s": "cenas.html",
-                    "postres": "postres.html",
-                     "postres": "postres.html",
+    "postres": "postres.html",
+     "postres": "postres.html",
     "Postres": "postres.html",
     "POSTRES": "postres.html",
     "postre": "postres.html",
@@ -202,9 +201,8 @@ document.getElementById("buscador").addEventListener("keypress", function(event)
     "PoStrres": "postres.html",
     "postressss": "postres.html",
     "poshtres": "postres.html",
-            "helado artesanal":"postre-7-helado-artesanal.html",
-            "helado": "postre-7-helado-artesanal.html",
-            
+    "helado artesanal":"postre-7-helado-artesanal.html",
+    "helado": "postre-7-helado-artesanal.html",
   "helado artesanal": "postre-7-helado-artesanal",
   "helado casero": "postre-7-helado-artesanal",
   "nieve natural": "postre-7-helado-artesanal",
@@ -1912,43 +1910,94 @@ document.getElementById("buscador").addEventListener("keypress", function(event)
   "brownie para niños": "postre-20-brownie-chocolate.html",
   "brownie saludable": "postre-20-brownie-chocolate.html",
   "brownie": "postre-20-brownie-chocolate.html"
-            
         };
 
-        // Buscar receta con variantes
-        let pagina = Object.keys(paginasRecetas).find(key => receta.includes(key));
-        
-        // Redirigir si encuentra la receta, si no, sugerir alternativas
-        if (pagina) {
-            window.location.href = paginasRecetas[pagina];
+        if (paginasRecetas[receta]) {
+            window.location.href = paginasRecetas[receta];
         } else {
-            alert("Receta no encontrada. Intenta escribir el nombre del platillo o una variante como 'tacos', 'pastel' o 'flan'.");
+            alert("Receta no encontrada. Intenta escribir desayunos, comidas, cenas o postres.");
         }
     }
 });
-function abrirMenu() {
-    let menu = document.getElementById("menu");
-    let botonMenu = document.querySelector(".menu-toggle");
+document.addEventListener("DOMContentLoaded", function () {
+    let categoriasBoton = document.getElementById("categorias-toggle");
+    let categoriasMenu = document.getElementById("categorias");
 
-    menu.style.left = "0";
-    menu.style.boxShadow = "4px 0px 15px rgba(0, 0, 0, 0.5)";
-    menu.style.visibility = "visible";
+    // Ocultar el menú al cargar la página
+    categoriasMenu.style.display = "none";
 
-    // Envía el botón detrás del menú
-    botonMenu.style.zIndex = "-1";
-}
+    // Mostrar categorías cuando el cursor está sobre el botón
+    categoriasBoton.addEventListener("mouseenter", function () {
+        categoriasMenu.style.display = "block";
+        categoriasMenu.style.position = "absolute"; 
+        categoriasMenu.style.top = categoriasBoton.offsetHeight + "px"; /* ✅ Asegura que los botones aparezcan debajo de "Categorías" */
+        categoriasMenu.style.left = categoriasBoton.offsetLeft + 15 + "px"; /* ✅ Mueve el menú más a la derecha */
+    });
 
-function cerrarMenu() {
-    let menu = document.getElementById("menu");
-    let botonMenu = document.querySelector(".menu-toggle");
+    // Ocultar categorías cuando el cursor sale del menú o del botón
+    categoriasBoton.addEventListener("mouseleave", function () {
+        setTimeout(() => {
+            if (!categoriasMenu.matches(":hover")) {
+                categoriasMenu.style.display = "none";
+            }
+        }, 200);
+    });
 
-    menu.style.left = "-300px";
-    menu.style.boxShadow = "none";
+    categoriasMenu.addEventListener("mouseleave", function () {
+        categoriasMenu.style.display = "none";
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let buscador = document.getElementById("buscador");
+    let sugerencias = document.createElement("ul"); // Crear la lista de sugerencias
+    sugerencias.classList.add("sugerencias-lista");
+    document.body.appendChild(sugerencias); // Agregar la lista al cuerpo
 
-    setTimeout(() => {
-        menu.style.visibility = "hidden";
+    // Opciones de búsqueda sugeridas
+    let opcionesBusqueda = ["Desayunos", "Comidas", "Cenas", "Postres", "Recetas rápidas", "Platos saludables"];
 
-        // Restaura el botón al frente
-        botonMenu.style.zIndex = "1000";
-    }, 300);
-}
+    // Detectar cuando el usuario escribe en el buscador
+    buscador.addEventListener("input", function () {
+        let valor = buscador.value.toLowerCase().trim();
+        sugerencias.innerHTML = ""; // Limpiar sugerencias anteriores
+
+        if (valor.length > 0) {
+            let resultados = opcionesBusqueda.filter(opcion => opcion.toLowerCase().includes(valor));
+
+            resultados.forEach(opcion => {
+                let item = document.createElement("li");
+                item.textContent = opcion;
+                item.addEventListener("click", function () {
+                    buscador.value = opcion;
+                    sugerencias.innerHTML = "";
+                    window.location.href = opcion.toLowerCase() + ".html"; // Redirige automáticamente
+                });
+                sugerencias.appendChild(item);
+            });
+
+            // Posicionar lista debajo del buscador
+            let rect = buscador.getBoundingClientRect();
+            sugerencias.style.left = rect.left + "px";
+            sugerencias.style.top = (rect.bottom + 5) + "px";
+            sugerencias.style.width = buscador.offsetWidth + "px";
+            sugerencias.style.display = "block";
+        } else {
+            sugerencias.style.display = "none";
+        }
+    });
+
+    // Ocultar lista de sugerencias si el usuario hace clic fuera
+    document.addEventListener("click", function (event) {
+        if (!buscador.contains(event.target) && !sugerencias.contains(event.target)) {
+            sugerencias.style.display = "none";
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let buscador = document.getElementById("buscador");
+
+    // Evitar autocompletado del navegador
+    buscador.setAttribute("autocomplete", "off");
+
+    // Continúa con el código de sugerencias personalizado...
+});

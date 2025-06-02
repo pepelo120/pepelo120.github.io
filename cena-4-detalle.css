@@ -57,3 +57,149 @@ ul, ol {
         max-width: 90%;
     }
 }
+
+
+
+
+
+
+/* Menú superior */
+.menu-superior {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+/* Cambio de fondo al hacer scroll */
+.menu-superior.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.8);
+}
+
+/* Lista de navegación */
+.menu-superior ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+/* Estilo de los enlaces */
+.menu-superior a, .dropdown span {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: color 0.3s ease-in-out, background 0.4s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Efecto hover */
+.menu-superior a:hover, .dropdown span:hover {
+    color: #ffcc00;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Submenú de categorías */
+.categorias {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    background: rgba(20, 20, 20, 0.95);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+    transform: translateY(-15px);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Efecto de deslizamiento */
+.dropdown:hover .categorias {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botones dentro del submenú */
+.categorias a {
+    color: white;
+    font-size: 14px;
+    display: block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.4s ease-in-out;
+}
+
+/* Efecto al pasar el mouse */
+.categorias a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Buscador con estilo glassmorphism */
+.buscador {
+    position: fixed;
+    top: 12px;
+    right: 30px;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 15px;
+    width: 170px;
+    text-align: center;
+    background: rgba(20, 20, 20, 0.85);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0px 0px 8px rgba(255, 255, 255, 0.2);
+    transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Efecto al enfocar */
+.buscador:focus {
+    box-shadow: inset 0px 0px 12px rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Responsividad - Menú hamburguesa */
+@media (max-width: 768px) {
+    .menu-superior ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .buscador {
+        width: 120px;
+    }
+
+    .categorias {
+        left: auto;
+        right: 10px;
+    }
+
+    .menu-superior {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .menu-hamburguesa {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+}
