@@ -5,7 +5,7 @@ const confirmacion = document.getElementById('confirmacion');
 enviar.addEventListener('click', (e) => {
     e.preventDefault();
 
-    // Limpiar datos antiguos de domicilio
+    // Limpiar datos antiguos
     localStorage.removeItem('nombre');
     localStorage.removeItem('telefono');
     localStorage.removeItem('direccion');
@@ -14,7 +14,7 @@ enviar.addEventListener('click', (e) => {
     localStorage.removeItem('municipio');
     localStorage.removeItem('estado');
 
-    // Obtener los valores ingresados
+    // Obtener datos nuevos
     const nombre = document.getElementById('nombre').value;
     const telefono = document.getElementById('telefono').value;
     const direccion = document.getElementById('direccion').value;
@@ -23,9 +23,7 @@ enviar.addEventListener('click', (e) => {
     const municipio = document.getElementById('municipio').value;
     const estado = document.getElementById('estado').value;
 
-    // Verificar los campos requeridos
     if (nombre && telefono && direccion && calle && colonia && municipio && estado) {
-        // Guardar los datos en localStorage
         localStorage.setItem('nombre', nombre);
         localStorage.setItem('telefono', telefono);
         localStorage.setItem('direccion', direccion);
@@ -34,10 +32,9 @@ enviar.addEventListener('click', (e) => {
         localStorage.setItem('municipio', municipio);
         localStorage.setItem('estado', estado);
 
-        // Redirigir al ticket-domicilio.html
         window.location.href = 'ticket-domicilio.html';
     } else {
         confirmacion.textContent = 'Por favor, completa toda la información requerida.';
-        confirmacion.style.color = 'red'; // Cambiar el color del mensaje a rojo
+        confirmacion.style.color = 'red';
     }
 });
