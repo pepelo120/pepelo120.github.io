@@ -475,7 +475,8 @@ document.getElementById("buscador").addEventListener("keypress", function (event
   "avena con canela": "desayuno-2-avena-frutas",
   "avena con frutas secas": "desayuno-2-avena-frutas",
   "desayuno rápido": "desayuno-2-avena-frutas",
-            
+
+  "huevos": "desayuno-1-huevos-rancheros",        
   "huevos rancheros clásicos": "desayuno-1-huevos-rancheros",
   "huevos rancheros": "desayuno-1-huevos-rancheros",
   "huevos con salsa ranchera": "desayuno-1-huevos-rancheros",
