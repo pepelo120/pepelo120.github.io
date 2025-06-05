@@ -351,3 +351,38 @@ h1, h2, h3, h4, h5, h6 {
     0% { text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6); }
     100% { text-shadow: 5px 5px 20px rgba(255, 255, 255, 1); }
 }
+.carrusel {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.imagenes {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.imagenes img {
+    width: 100%;
+    display: none;
+}
+
+.imagenes img.activo {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#prev { left: 0; }
+#next { right: 0; }
