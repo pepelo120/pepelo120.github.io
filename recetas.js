@@ -2003,3 +2003,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Continúa con el código de sugerencias personalizado...
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const imagenes = document.querySelectorAll(".imagenes img");
+    let indiceActual = 0;
+
+    document.getElementById("next").addEventListener("click", function() {
+        imagenes[indiceActual].classList.remove("activo");
+        indiceActual = (indiceActual + 1) % imagenes.length;
+        imagenes[indiceActual].classList.add("activo");
+    });
+
+    document.getElementById("prev").addEventListener("click", function() {
+        imagenes[indiceActual].classList.remove("activo");
+        indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+        imagenes[indiceActual].classList.add("activo");
+    });
+});
