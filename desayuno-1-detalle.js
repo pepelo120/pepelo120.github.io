@@ -58,8 +58,7 @@ document.getElementById("buscador").addEventListener("keypress", function (event
         }
     }
 });
-
-dodocument.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const { jsPDF } = window.jspdf;
     const botonDescarga = document.getElementById("descargar-receta-final");
 
@@ -68,47 +67,63 @@ dodocument.addEventListener("DOMContentLoaded", () => {
             console.log("Generando PDF...");
 
             const doc = new jsPDF();
+
+            // Título
             doc.setFont("helvetica", "bold");
-            doc.setFontSize(20);
+            doc.setFontSize(22);
             doc.text("Huevos Rancheros 🍳🌮", 20, 20);
 
-            doc.setFontSize(14);
+            // Ingredientes
+            doc.setFontSize(16);
             doc.text("Ingredientes:", 20, 30);
             doc.setFont("helvetica", "normal");
-            doc.text("- 2 huevos", 20, 40);
-            doc.text("- 2 tortillas de maíz", 20, 50);
-            doc.text("- 2 tomates picados", 20, 60);
-            doc.text("- ½ cebolla picada", 20, 70);
-            doc.text("- 1 diente de ajo picado", 20, 80);
-            doc.text("- 1 chile serrano picado (opcional)", 20, 90);
-            doc.text("- Sal y pimienta al gusto", 20, 100);
-            doc.text("- 1 cucharada de aceite de oliva", 20, 110);
-            doc.text("- Frijoles refritos para acompañar", 20, 120);
-            doc.text("- Queso fresco y cilantro picado para decorar", 20, 130);
 
-            doc.setFont("helvetica", "bold");
-            doc.text("Preparación:", 20, 150);
-            doc.setFont("helvetica", "normal");
-            let pasos = [
-                "1. Calienta el aceite en una sartén y sofríe la cebolla, el ajo y el chile serrano.",
-                "2. Agrega los tomates y cocina a fuego medio hasta obtener una salsa espesa.",
-                "3. Sazona con sal y pimienta y reserva.",
-                "4. Fríe ligeramente las tortillas para que estén crujientes.",
-                "5. Cocina los huevos fritos en la misma sartén hasta que las claras estén firmes.",
-                "6. Coloca cada huevo sobre una tortilla y cubre con la salsa ranchera.",
-                "7. Decora con queso fresco y cilantro picado.",
-                "8. Acompaña con frijoles refritos y disfruta tu desayuno ranchero. 🍳🌮"
+            const ingredientes = [
+                ["✅ 2 huevos"],
+                ["✅ 2 tortillas de maíz"],
+                ["✅ 2 tomates picados"],
+                ["✅ ½ cebolla picada"],
+                ["✅ 1 diente de ajo picado"],
+                ["✅ 1 chile serrano picado (opcional)"],
+                ["✅ Sal y pimienta al gusto"],
+                ["✅ 1 cucharada de aceite de oliva"],
+                ["✅ Frijoles refritos para acompañar"],
+                ["✅ Queso fresco y cilantro picado para decorar"]
             ];
 
-            let y = 160;
+            doc.autoTable({
+                startY: 40,
+                head: [["Ingredientes"]],
+                body: ingredientes,
+                theme: "grid"
+            });
+
+            // Preparación
+            doc.setFontSize(16);
+            doc.text("Preparación:", 20, doc.autoTable.previous.finalY + 10);
+            doc.setFont("helvetica", "normal");
+
+            const pasos = [
+                "1️⃣ Calienta el aceite en una sartén y sofríe la cebolla, el ajo y el chile serrano.",
+                "2️⃣ Agrega los tomates y cocina a fuego medio hasta obtener una salsa espesa.",
+                "3️⃣ Sazona con sal y pimienta y reserva.",
+                "4️⃣ Fríe ligeramente las tortillas para que estén crujientes.",
+                "5️⃣ Cocina los huevos fritos en la misma sartén hasta que las claras estén firmes.",
+                "6️⃣ Coloca cada huevo sobre una tortilla y cubre con la salsa ranchera.",
+                "7️⃣ Decora con queso fresco y cilantro picado.",
+                "8️⃣ Acompaña con frijoles refritos y disfruta tu desayuno ranchero. 🍳🌮"
+            ];
+
+            let y = doc.autoTable.previous.finalY + 20;
             pasos.forEach((paso) => {
                 doc.text(paso, 20, y);
                 y += 10;
             });
 
+            // Guardar el archivo
             doc.save("receta_huevos_rancheros.pdf");
         });
     } else {
-        console.error("Error: El botón de descarga no se encontró.");
+        console.error("⚠️ El botón de descarga no se encontró en el documento.");
     }
 });
