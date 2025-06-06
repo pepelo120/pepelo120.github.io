@@ -11,7 +11,7 @@ body {
     margin: 0;
 }
 
-/* Contenedor del formulario con efecto de profundidad */
+/* Contenedor del formulario */
 .contenedor {
     background: linear-gradient(135deg, #ff4500, #ff7f50);
     padding: 30px;
@@ -48,7 +48,7 @@ label {
     color: #ffffff;
 }
 
-/* Estilo modernizado de los campos de texto */
+/* Campos de texto */
 .controls {
     width: 90%;
     padding: 12px;
@@ -60,13 +60,13 @@ label {
     transition: all 0.3s ease;
 }
 
-/* Efecto al seleccionar un campo */
+/* Efecto al seleccionar */
 .controls:focus {
     background-color: rgba(255, 255, 255, 0.3);
     outline: none;
 }
 
-/* Ajuste del textarea con bordes suaves */
+/* Ajuste del textarea */
 textarea {
     height: 120px;
     resize: none;
@@ -83,7 +83,7 @@ textarea:focus {
     outline: none;
 }
 
-/* Botón de enviar con efecto elegante */
+/* Botón de envío */
 .botons {
     background: linear-gradient(135deg, #1b1b1b, #333);
     color: white;
@@ -97,7 +97,6 @@ textarea:focus {
     transition: all 0.3s ease-in-out;
 }
 
-/* Efectos al pasar el cursor */
 .botons:hover {
     background: linear-gradient(135deg, #cc3700, #ff4500);
     transform: scale(1.05);
