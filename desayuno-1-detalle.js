@@ -147,8 +147,13 @@ document.getElementById("buscador").addEventListener("keypress", function (event
             alert("Receta no encontrada. Intenta escribir desayunos, comidas, cenas o postres.");
         }
     }
-});document.getElementById("descargar-receta-final").addEventListener("click", function () {
-    const recetaTexto = `Huevos Rancheros 🍳🌮
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const botonDescarga = document.getElementById("descargar-receta-final");
+
+    if (botonDescarga) {
+        botonDescarga.addEventListener("click", function () {
+            const recetaTexto = `Huevos Rancheros 🍳🌮
 
 Ingredientes:
 - 2 huevos
@@ -174,14 +179,18 @@ Preparación:
 
 ¡Buen provecho!`;
 
-    const blob = new Blob([recetaTexto], { type: "text/plain" });
-    const enlace = document.createElement("a");
+            const blob = new Blob([recetaTexto], { type: "text/plain" });
+            const enlace = document.createElement("a");
 
-    enlace.href = URL.createObjectURL(blob);
-    enlace.download = "receta_huevos_rancheros.txt";
+            enlace.href = URL.createObjectURL(blob);
+            enlace.download = "receta_huevos_rancheros.txt";
 
-    // Agregar el enlace temporalmente al DOM y activarlo
-    document.body.appendChild(enlace);
-    enlace.click();
-    document.body.removeChild(enlace);
+            // Agregar y eliminar el enlace del DOM después de la acción
+            document.body.appendChild(enlace);
+            enlace.click();
+            document.body.removeChild(enlace);
+        });
+    } else {
+        console.error("El botón de descarga no se encontró en el documento.");
+    }
 });
