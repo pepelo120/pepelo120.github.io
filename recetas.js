@@ -2018,4 +2018,42 @@ document.addEventListener("DOMContentLoaded", function() {
         indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
         imagenes[indiceActual].classList.add("activo");
     });
+});document.addEventListener("DOMContentLoaded", function() {
+    const imagenes = document.querySelectorAll(".imagenes img");
+    let indiceActual = 0;
+
+    document.getElementById("next").addEventListener("click", function() {
+        imagenes[indiceActual].classList.remove("activo");
+        indiceActual = (indiceActual + 1) % imagenes.length;
+        imagenes[indiceActual].classList.add("activo");
+    });
+
+    document.getElementById("prev").addEventListener("click", function() {
+        imagenes[indiceActual].classList.remove("activo");
+        indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+        imagenes[indiceActual].classList.add("activo");
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const imagenes = document.querySelectorAll(".imagenes img");
+    let indiceActual = 0;
+
+    function cambiarImagen(direccion) {
+        imagenes[indiceActual].classList.remove("activo");
+        indiceActual = (indiceActual + direccion + imagenes.length) % imagenes.length;
+        imagenes[indiceActual].classList.add("activo");
+    }
+
+    document.getElementById("next").addEventListener("click", function() {
+        cambiarImagen(1);
+    });
+
+    document.getElementById("prev").addEventListener("click", function() {
+        cambiarImagen(-1);
+    });
+
+    // Movimiento automático cada 4 segundos
+    setInterval(function() {
+        cambiarImagen(1);
+    }, 4000);
 });
