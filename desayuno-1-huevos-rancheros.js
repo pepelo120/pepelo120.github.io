@@ -169,3 +169,40 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.removeChild(enlace);
     });
 });
+document.getElementById("descargar-receta-final").addEventListener("click", function () {
+    const recetaTexto = `Huevos Rancheros 🍳🌮
+
+Ingredientes:
+- 2 huevos
+- 2 tortillas de maíz
+- 2 tomates picados
+- ½ cebolla picada
+- 1 diente de ajo picado
+- 1 chile serrano picado (opcional)
+- Sal y pimienta al gusto
+- 1 cucharada de aceite de oliva
+- Frijoles refritos para acompañar
+- Queso fresco y cilantro picado para decorar
+
+Preparación:
+1. Calienta el aceite en una sartén y sofríe la cebolla, el ajo y el chile serrano.
+2. Agrega los tomates y cocina a fuego medio hasta obtener una salsa espesa.
+3. Sazona con sal y pimienta y reserva.
+4. Fríe ligeramente las tortillas para que estén crujientes.
+5. Cocina los huevos fritos en la misma sartén hasta que las claras estén firmes.
+6. Coloca cada huevo sobre una tortilla y cubre con la salsa ranchera.
+7. Decora con queso fresco y cilantro picado.
+8. Acompaña con frijoles refritos y disfruta tu desayuno ranchero. 🍳🌮
+
+¡Buen provecho!`;
+
+    const blob = new Blob([recetaTexto], { type: "text/plain" });
+    const enlace = document.createElement("a");
+    enlace.href = URL.createObjectURL(blob);
+    enlace.download = "receta_huevos_rancheros.txt";
+
+    // Agregar el enlace al DOM, hacer clic y eliminarlo
+    document.body.appendChild(enlace);
+    enlace.click();
+    document.body.removeChild(enlace);
+});
