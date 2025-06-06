@@ -148,27 +148,6 @@ document.getElementById("buscador").addEventListener("keypress", function (event
         }
     }
 });
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Página de Huevos Rancheros cargada correctamente.");
-
-    // Animación de aparición
-    const desayuno = document.querySelector(".desayuno-1-detalle");
-    desayuno.classList.add("visible");
-
-    // Botón de descarga de receta
-    document.getElementById("descargar-receta-final").addEventListener("click", function () {
-        const recetaTexto = document.querySelector(".desayuno-1-detalle").innerText;
-        const blob = new Blob([recetaTexto], { type: "text/plain" });
-        const enlace = document.createElement("a");
-        enlace.href = URL.createObjectURL(blob);
-        enlace.download = "receta_huevos_rancheros.txt";
-        document.body.appendChild(enlace);
-        enlace.click();
-        document.body.removeChild(enlace);
-    });
-});
 document.getElementById("descargar-receta-final").addEventListener("click", function () {
     const recetaTexto = `Huevos Rancheros 🍳🌮
 
