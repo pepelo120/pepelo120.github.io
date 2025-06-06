@@ -11,6 +11,11 @@ document.getElementById("comentarios-form").addEventListener("submit", function(
 document.getElementById("generarPDF").addEventListener("click", generarPDF);
 
 function generarPDF() {
+    if (!window.jspdf) {
+        alert("Error: La librería jsPDF no está cargada correctamente.");
+        return;
+    }
+
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
@@ -34,7 +39,13 @@ function generarPDF() {
     doc.text(`Apellido: ${apellido}`, 20, 50);
     doc.text(`Correo Electrónico: ${correo}`, 20, 60);
     doc.text("Comentario:", 20, 80);
-    doc.text(mensaje, 20, 90, { maxWidth: 170 });
+
+    // Ajuste del texto para evitar cortes si el comentario es largo
+    let textOptions = {
+        maxWidth: 170,
+        align: "left"
+    };
+    doc.text(mensaje, 20, 90, textOptions);
 
     doc.save(`Comentario_${nombre}_${apellido}.pdf`);
 }
