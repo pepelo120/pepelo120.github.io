@@ -147,8 +147,7 @@ document.getElementById("buscador").addEventListener("keypress", function (event
             alert("Receta no encontrada. Intenta escribir desayunos, comidas, cenas o postres.");
         }
     }
-});
-document.getElementById("descargar-receta-final").addEventListener("click", function () {
+});document.getElementById("descargar-receta-final").addEventListener("click", function () {
     const recetaTexto = `Huevos Rancheros 🍳🌮
 
 Ingredientes:
@@ -177,10 +176,11 @@ Preparación:
 
     const blob = new Blob([recetaTexto], { type: "text/plain" });
     const enlace = document.createElement("a");
+
     enlace.href = URL.createObjectURL(blob);
     enlace.download = "receta_huevos_rancheros.txt";
 
-    // Agregar el enlace al DOM, hacer clic y eliminarlo
+    // Agregar el enlace temporalmente al DOM y activarlo
     document.body.appendChild(enlace);
     enlace.click();
     document.body.removeChild(enlace);
