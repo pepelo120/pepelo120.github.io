@@ -10,7 +10,56 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 300);
 });
 
-// Función para descargar la receta en un archivo .txt
+// Menú desplegable de categorías
+document.addEventListener("DOMContentLoaded", function () {
+    let categoriasBoton = document.getElementById("categorias-toggle");
+    let categoriasMenu = document.getElementById("categorias");
+
+    // Ocultar el menú al cargar la página
+    categoriasMenu.style.display = "none";
+
+    // Mostrar categorías cuando el cursor está sobre el botón
+    categoriasBoton.addEventListener("mouseenter", function () {
+        categoriasMenu.style.display = "block";
+        categoriasMenu.style.position = "absolute";
+        categoriasMenu.style.top = categoriasBoton.offsetHeight + "px";
+        categoriasMenu.style.left = categoriasBoton.offsetLeft + 15 + "px";
+    });
+
+    // Ocultar categorías cuando el cursor sale del menú o del botón
+    categoriasBoton.addEventListener("mouseleave", function () {
+        setTimeout(() => {
+            if (!categoriasMenu.matches(":hover")) {
+                categoriasMenu.style.display = "none";
+            }
+        }, 200);
+    });
+
+    categoriasMenu.addEventListener("mouseleave", function () {
+        categoriasMenu.style.display = "none";
+    });
+});
+
+// Buscador funcional
+document.getElementById("buscador").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        let receta = event.target.value.toLowerCase().trim();
+        let paginasRecetas = {
+            "desayunos": "desayunos.html",
+            "comidas": "comidas.html",
+            "cenas": "cenas.html",
+            "postres": "postres.html"
+        };
+
+        if (paginasRecetas[receta]) {
+            window.location.href = paginasRecetas[receta];
+        } else {
+            alert("Receta no encontrada. Intenta escribir desayunos, comidas, cenas o postres.");
+        }
+    }
+});
+
+// Función para descargar la receta en un archivo .txt (ubicada al final del código)
 document.getElementById("descargar-receta").addEventListener("click", function () {
     const recetaTexto = `
 Huevos Rancheros 🍳🌮
@@ -49,6 +98,7 @@ Preparación:
     enlace.click();
     document.body.removeChild(enlace);
 });
+
 
 // Menú desplegable de categorías
 document.addEventListener("DOMContentLoaded", function () {
