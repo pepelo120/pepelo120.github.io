@@ -104,15 +104,18 @@ document.addEventListener("DOMContentLoaded", () => {
             doc.setFont("helvetica", "normal");
 
             const pasos = [
-                "1️ Calienta el aceite en una sartén y sofríe la cebolla, el ajo y el chile serrano.",
-                "2️ Agrega los tomates y cocina a fuego medio hasta obtener una salsa espesa.",
-                "3️ Sazona con sal y pimienta y reserva.",
-                "4️ Fríe ligeramente las tortillas para que estén crujientes.",
-                "5️ Cocina los huevos fritos en la misma sartén hasta que las claras estén firmes.",
-                "6️ Coloca cada huevo sobre una tortilla y cubre con la salsa ranchera.",
-                "7️ Decora con queso fresco y cilantro picado.",
-                "8️ Acompaña con frijoles refritos y disfruta tu desayuno ranchero. 🍳🌮"
-            ];
+    "Calienta el aceite en una sartén y sofríe la cebolla, el ajo y el chile serrano.",
+    "Agrega los tomates y cocina a fuego medio hasta obtener una salsa espesa.",
+    "Sazona con sal y pimienta y reserva.",
+    "Fríe ligeramente las tortillas para que estén crujientes.",
+    "Cocina los huevos fritos en la misma sartén hasta que las claras estén firmes.",
+    "Coloca cada huevo sobre una tortilla y cubre con la salsa ranchera.",
+    "Decora con queso fresco y cilantro picado.",
+    "Acompaña con frijoles refritos y disfruta tu desayuno ranchero."
+];
+
+console.log(pasos);
+
 
             let y = doc.autoTable.previous.finalY + 20;
             pasos.forEach((paso) => {
