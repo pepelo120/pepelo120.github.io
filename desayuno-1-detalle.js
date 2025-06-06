@@ -79,16 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
             doc.setFont("helvetica", "normal");
 
             const ingredientes = [
-                ["✅ 2 huevos"],
-                ["✅ 2 tortillas de maíz"],
-                ["✅ 2 tomates picados"],
-                ["✅ ½ cebolla picada"],
-                ["✅ 1 diente de ajo picado"],
-                ["✅ 1 chile serrano picado (opcional)"],
-                ["✅ Sal y pimienta al gusto"],
-                ["✅ 1 cucharada de aceite de oliva"],
-                ["✅ Frijoles refritos para acompañar"],
-                ["✅ Queso fresco y cilantro picado para decorar"]
+                [" 2 huevos"],
+                [" 2 tortillas de maíz"],
+                [" 2 tomates picados"],
+                [" ½ cebolla picada"],
+                [" 1 diente de ajo picado"],
+                [" 1 chile serrano picado (opcional)"],
+                ["Sal y pimienta al gusto"],
+                ["1 cucharada de aceite de oliva"],
+                ["Frijoles refritos para acompañar"],
+                [" Queso fresco y cilantro picado para decorar"]
             ];
 
             doc.autoTable({
@@ -104,14 +104,14 @@ document.addEventListener("DOMContentLoaded", () => {
             doc.setFont("helvetica", "normal");
 
             const pasos = [
-                "1️⃣ Calienta el aceite en una sartén y sofríe la cebolla, el ajo y el chile serrano.",
-                "2️⃣ Agrega los tomates y cocina a fuego medio hasta obtener una salsa espesa.",
-                "3️⃣ Sazona con sal y pimienta y reserva.",
-                "4️⃣ Fríe ligeramente las tortillas para que estén crujientes.",
-                "5️⃣ Cocina los huevos fritos en la misma sartén hasta que las claras estén firmes.",
-                "6️⃣ Coloca cada huevo sobre una tortilla y cubre con la salsa ranchera.",
-                "7️⃣ Decora con queso fresco y cilantro picado.",
-                "8️⃣ Acompaña con frijoles refritos y disfruta tu desayuno ranchero. 🍳🌮"
+                "1️ Calienta el aceite en una sartén y sofríe la cebolla, el ajo y el chile serrano.",
+                "2️ Agrega los tomates y cocina a fuego medio hasta obtener una salsa espesa.",
+                "3️ Sazona con sal y pimienta y reserva.",
+                "4️ Fríe ligeramente las tortillas para que estén crujientes.",
+                "5️ Cocina los huevos fritos en la misma sartén hasta que las claras estén firmes.",
+                "6️ Coloca cada huevo sobre una tortilla y cubre con la salsa ranchera.",
+                "7️ Decora con queso fresco y cilantro picado.",
+                "8️ Acompaña con frijoles refritos y disfruta tu desayuno ranchero. 🍳🌮"
             ];
 
             let y = doc.autoTable.previous.finalY + 20;
