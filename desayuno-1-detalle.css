@@ -266,3 +266,26 @@ ul, ol {
         padding: 10px;
     }
 }
+.boton-descarga {
+    background: linear-gradient(135deg, #1b1b1b, #333);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.boton-descarga:hover {
+    background: linear-gradient(135deg, #cc3700, #ff4500);
+    transform: scale(1.05);
+    box-shadow: 0px 8px 25px rgba(255, 69, 0, 0.7);
+}
+
+.boton-descarga:active {
+    transform: scale(0.95);
+    box-shadow: 0px 3px 10px rgba(255, 69, 0, 0.5);
+}
